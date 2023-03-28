@@ -8,10 +8,11 @@ function AddApartmentPage() {
 
     const navigate = useNavigate();  
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => {       // <== HANDLER FUNCTION
+        // Prevent page reload on submit
         e.preventDefault();
-
-        const body = {tittle:headline, pricePerDay: price};
+         // Create the body for the POST request
+        const body = {title:headline, pricePerDay: price};
 
         axios
         .post("https://ironbnb-m3.herokuapp.com/apartments", body)
@@ -23,7 +24,7 @@ function AddApartmentPage() {
           // Navigate to the `/` page
         navigate('/');  
         });
-    }
+    };
 
     return (
       <div className="AddApartmentPage">
